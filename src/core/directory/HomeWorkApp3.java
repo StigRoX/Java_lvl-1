@@ -44,12 +44,9 @@ public class HomeWorkApp3 {
     /* 4.Создать квадратный двумерный целочисленный массив, и с помощью цикла заполнить его диагональные
     элементы единицами (можно только одну из диагоналей, если обе сложно). */
     public static void m4_bivariate_array() {
-        int[][] arr = {
-                {1, 2, 3},
-                {4, 5, 6},
-                {7, 8, 9}};
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        int[][] arr = new int[4][4];
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
                 if (i == j) {
                     arr[i][j] = 1;
                 }
@@ -86,10 +83,7 @@ public class HomeWorkApp3 {
                 min = arr6[i];
             }
         }
-        System.out.println("\nMAX");
-        System.out.println(max);
-        System.out.println("\nMIN");
-        System.out.println(min);
+        System.out.println("\nMIN – " + (min) + " | " + "MAX – " + (max));
     }
 
     /* 7 ** Написать метод, в который передается не пустой одномерный
@@ -120,21 +114,21 @@ public class HomeWorkApp3 {
         for (int i = 0; i < arr6.length; i++){
             arr6[i] = random.nextInt(100);
         }
-        int[] arr7 = {1, 1, 2, 2}; // <=== Array for task 7
-        System.out.println("---------------------\nmethod1: ");
+        int[] arr7 = {1, 2, 3, 3, 2, 1}; // <=== Array for task 7
+        System.out.println("---------------------\nmethod1:");
         m1_SwapZeroOne(arr1); // Task 1 check
-        System.out.println("\n---------------------\nmethod2: ");
+        System.out.println("\n---------------------\nmethod2:");
         m2_ZeroToOneHundred(); // Task 2 check
-        System.out.println("\n---------------------\nmethod3: ");
+        System.out.println("\n---------------------\nmethod3:");
         m3_UnderSixToDouble(arr3); // Task 3 check
-        System.out.println("\n---------------------\nmethod4: ");
+        System.out.println("\n---------------------\nmethod4:");
         m4_bivariate_array(); // Task 4 check
-        System.out.println("\n---------------------\nmethod5: ");
+        System.out.println("---------------------\nmethod5:");
         m5_receiverTwoInt(6, 8); // Task 5 check
-        System.out.println("\n---------------------\nmethod6:\nGenerated array");
-        System.out.println(Arrays.toString(arr6));
+        System.out.println("\n---------------------\nmethod6:");
+        System.out.println("Generated array – " + Arrays.toString(arr6));
         m6_finderMaxMin(arr6); // Task 6 check
-        System.out.println("\n---------------------\nmethod7: ");
+        System.out.println("---------------------\nmethod7:");
         System.out.println(m7_nonEmptyUnivariateIntegerArray(arr7)); // Task 7 check
     }
 }
