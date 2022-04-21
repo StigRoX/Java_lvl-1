@@ -22,7 +22,7 @@ public class TicTacToe {
     }
 
     void game(){
-        System.out.println("Game is started!");
+        System.out.println("Game is started!\nIn order to put «X», enter in the input\n«number on horizontal» + press [space]\n+ «number on vertical» & press [enter]");
         initTable();
         printTable();
 
@@ -75,9 +75,9 @@ public class TicTacToe {
         int x, y;
 
         do{
-            System.out.println("Enter x y from [0..2]");
-            x = scanner.nextInt();
-            y = scanner.nextInt();
+            System.out.println("It's your turn.");
+            x = scanner.nextInt()-1;
+            y = scanner.nextInt()-1;
             //System.out.println(x + ", " + y);
         } while (!isCellValid(x, y));
         table[x][y] = 'x';
@@ -118,11 +118,19 @@ public class TicTacToe {
     }
 
     void printTable() {
-        for(int y = 0; y < 3; y++){
-            for(int x = 0; x < 3; x++){
-                String out = table[x][y] + "|";
-                if (x == 0) out = "|" + out;
-                System.out.print(table[x][y] + "|");
+        for(int y = -1; y < 3; y++){
+            if(y >= 0) {
+                System.out.print(y+1 + "|");
+            } else {
+                System.out.print("  ");
+            }
+            for(int x = -1; x < 3; x++) {
+                if (x >= 0 && y == -1) {
+                    System.out.print(x+1 + " ");
+                }
+                if (x >= 0 && y >= 0) {
+                    System.out.print(table[x][y] + "|");
+                }
             }
             System.out.println();
         }
